@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cli0km8r1okb2"]
+
+[ext_resource type="Texture2D" uid="uid://cct8ntrj5ma0u" path="res://assets/counter/flavors/DoceDeLeite_.png" id="1_qf57y"]
+[ext_resource type="Script" uid="uid://cmc6mch0jatr7" path="res://scripts/buttons/ingredients_button.gd" id="2_vespp"]
+
+[node name="ingredients_button" type="TextureButton" unique_id=138557786]
+size_flags_vertical = 8
+texture_normal = ExtResource("1_qf57y")
+script = ExtResource("2_vespp")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

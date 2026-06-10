@@ -3,16 +3,7 @@
 [ext_resource type="Script" uid="uid://g2ry3vexxhkv" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://mbhw6tvve5yr" path="res://assets/counter/counter_clean2.png" id="2_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://bcn7d02kced4a" path="res://assets/cones/cone_normal.png" id="3_choun"]
-[ext_resource type="Texture2D" uid="uid://cct8ntrj5ma0u" path="res://assets/counter/flavors/DoceDeLeite_.png" id="4_ya4ey"]
-[ext_resource type="Texture2D" uid="uid://dnpk1xxfb38su" path="res://assets/counter/mini cones/mini_normal_cone.png" id="4_yc10j"]
-[ext_resource type="Texture2D" uid="uid://bv3lxyjro1av" path="res://assets/counter/flavors/Strawberry_.png" id="5_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://cf03ahwk7stqa" path="res://assets/counter/mini cones/mini_chocolate_cone.png" id="5_jscy8"]
-[ext_resource type="Texture2D" uid="uid://btmidaikxm3uy" path="res://assets/counter/mini cones/mini_milk_cone.png" id="6_pm3ni"]
-[ext_resource type="Texture2D" uid="uid://efmvyy0rpcm" path="res://assets/counter/flavors/Lemon_.png" id="6_trceg"]
-[ext_resource type="Texture2D" uid="uid://bkmghmxwritme" path="res://assets/counter/flavors/Wine_.png" id="7_a8y0u"]
-[ext_resource type="Texture2D" uid="uid://cd3kceme456bb" path="res://assets/counter/mini cones/mini_strawberry_cone.png" id="7_y6deb"]
-[ext_resource type="Texture2D" uid="uid://1ahytenh5cv3" path="res://assets/counter/flavors/Bubblegum_.png" id="8_jkv2x"]
-[ext_resource type="Texture2D" uid="uid://ck1oq4blyq4k5" path="res://assets/counter/flavors/Orange_.png" id="9_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://cli0km8r1okb2" path="res://entities/ingredients_button.tscn" id="8_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://ueq7jqjh3fs1" path="res://assets/counter/toppings/topping_1.png" id="14_og1vs"]
 [ext_resource type="Texture2D" uid="uid://b5r4ho4wwieka" path="res://assets/counter/toppings/topping_2.png" id="15_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://canuqxf4fe7i4" path="res://assets/counter/toppings/topping_3.png" id="16_vxglm"]
@@ -54,6 +45,120 @@ offset_bottom = 378.00003
 scale = Vector2(6.5, 6.5)
 texture = ExtResource("2_gqmmt")
 
+[node name="Ingredients" type="Node2D" parent="." unique_id=750706785]
+
+[node name="ConeContainer" type="HBoxContainer" parent="Ingredients" unique_id=611874647]
+offset_left = 800.0
+offset_top = 585.88
+offset_right = 898.0
+offset_bottom = 603.88
+scale = Vector2(2.36, 2.36)
+theme_override_constants/separation = 2
+
+[node name="ingredients_button" parent="Ingredients/ConeContainer" unique_id=138557786 instance=ExtResource("8_gqmmt")]
+layout_mode = 2
+button_type = 1
+flavor = 6
+cone = 2
+
+[node name="ingredients_button2" parent="Ingredients/ConeContainer" unique_id=1523210699 instance=ExtResource("8_gqmmt")]
+layout_mode = 2
+button_type = 1
+flavor = 6
+
+[node name="ingredients_button3" parent="Ingredients/ConeContainer" unique_id=172986521 instance=ExtResource("8_gqmmt")]
+layout_mode = 2
+button_type = 1
+flavor = 6
+cone = 1
+
+[node name="ingredients_button4" parent="Ingredients/ConeContainer" unique_id=526623066 instance=ExtResource("8_gqmmt")]
+layout_mode = 2
+button_type = 1
+flavor = 6
+cone = 3
+
+[node name="FlavorContainer" type="HBoxContainer" parent="Ingredients" unique_id=1299193656]
+offset_left = 207.00002
+offset_top = 342.0
+offset_right = 345.0
+offset_bottom = 360.0
+scale = Vector2(6.5, 6.5)
+theme_override_constants/separation = -1
+
+[node name="ingredients_button" parent="Ingredients/FlavorContainer" unique_id=1790656486 instance=ExtResource("8_gqmmt")]
+layout_mode = 2
+flavor = 1
+cone = 4
+
+[node name="ingredients_button2" parent="Ingredients/FlavorContainer" unique_id=55735463 instance=ExtResource("8_gqmmt")]
+layout_mode = 2
+flavor = 4
+cone = 4
+
+[node name="ingredients_button4" parent="Ingredients/FlavorContainer" unique_id=1038116335 instance=ExtResource("8_gqmmt")]
+layout_mode = 2
+flavor = 2
+cone = 4
+
+[node name="ingredients_button3" parent="Ingredients/FlavorContainer" unique_id=1904633879 instance=ExtResource("8_gqmmt")]
+layout_mode = 2
+flavor = 5
+cone = 4
+
+[node name="ingredients_button5" parent="Ingredients/FlavorContainer" unique_id=915055730 instance=ExtResource("8_gqmmt")]
+layout_mode = 2
+cone = 4
+
+[node name="ingredients_button6" parent="Ingredients/FlavorContainer" unique_id=1391078560 instance=ExtResource("8_gqmmt")]
+layout_mode = 2
+flavor = 3
+cone = 4
+
+[node name="ToppingContainer" type="HBoxContainer" parent="Ingredients" unique_id=1900078436]
+offset_left = 170.0
+offset_top = 452.0
+offset_right = 317.07693
+offset_bottom = 468.15384
+scale = Vector2(6.5, 6.5)
+theme_override_constants/separation = 1
+
+[node name="DulceButton" type="TextureButton" parent="Ingredients/ToppingContainer" unique_id=1742977142]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("14_og1vs")
+
+[node name="StrawberryButton" type="TextureButton" parent="Ingredients/ToppingContainer" unique_id=909244039]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("15_2wyq8")
+
+[node name="LemonButton" type="TextureButton" parent="Ingredients/ToppingContainer" unique_id=141280246]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("16_vxglm")
+
+[node name="Pad" type="TextureRect" parent="Ingredients/ToppingContainer" unique_id=2127263382]
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("17_2f3dj")
+stretch_mode = 2
+
+[node name="WineButton" type="TextureButton" parent="Ingredients/ToppingContainer" unique_id=594089387]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("18_yq6so")
+
+[node name="BubblegumButton" type="TextureButton" parent="Ingredients/ToppingContainer" unique_id=1008883854]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("19_fv21b")
+
+[node name="OrangeButton" type="TextureButton" parent="Ingredients/ToppingContainer" unique_id=623479388]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("20_tel4y")
+
 [node name="IceCreamDisplay" type="Control" parent="." unique_id=482876285]
 anchors_preset = 0
 offset_left = 540.0
@@ -85,123 +190,3 @@ offset_right = -71.0
 offset_bottom = -1.2397766e-05
 grow_horizontal = 2
 scale = Vector2(2.395, 2.395)
-
-[node name="ConeContainer" type="HBoxContainer" parent="." unique_id=611874647]
-layout_mode = 0
-offset_left = 800.0
-offset_top = 601.0
-offset_right = 864.0
-offset_bottom = 613.0
-scale = Vector2(5, 5)
-theme_override_constants/separation = 2
-
-[node name="NormalConeButton" type="TextureButton" parent="ConeContainer" unique_id=219514303]
-layout_mode = 2
-texture_normal = ExtResource("4_yc10j")
-
-[node name="ChocolateConeButton" type="TextureButton" parent="ConeContainer" unique_id=1413316686]
-layout_mode = 2
-texture_normal = ExtResource("5_jscy8")
-
-[node name="MilkConeButton" type="TextureButton" parent="ConeContainer" unique_id=1815580827]
-layout_mode = 2
-texture_normal = ExtResource("6_pm3ni")
-
-[node name="StrawberryConeButton" type="TextureButton" parent="ConeContainer" unique_id=775191848]
-layout_mode = 2
-texture_normal = ExtResource("7_y6deb")
-
-[node name="FlavorContainer" type="HBoxContainer" parent="." unique_id=1299193656]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 341.0
-offset_right = 329.3846
-offset_bottom = 359.0
-scale = Vector2(6.5, 6.5)
-theme_override_constants/separation = 0
-
-[node name="DulceButton" type="TextureButton" parent="FlavorContainer" unique_id=2089241393]
-layout_mode = 2
-size_flags_vertical = 8
-texture_normal = ExtResource("4_ya4ey")
-
-[node name="StrawberryButton" type="TextureButton" parent="FlavorContainer" unique_id=413749217]
-layout_mode = 2
-size_flags_vertical = 8
-texture_normal = ExtResource("5_eb6dy")
-
-[node name="LemonButton" type="TextureButton" parent="FlavorContainer" unique_id=1169282337]
-layout_mode = 2
-size_flags_vertical = 8
-texture_normal = ExtResource("6_trceg")
-
-[node name="WineButton" type="TextureButton" parent="FlavorContainer" unique_id=1203950285]
-layout_mode = 2
-size_flags_vertical = 8
-texture_normal = ExtResource("7_a8y0u")
-
-[node name="BubblegumButton" type="TextureButton" parent="FlavorContainer" unique_id=595539549]
-layout_mode = 2
-size_flags_vertical = 8
-texture_normal = ExtResource("8_jkv2x")
-
-[node name="OrangeButton" type="TextureButton" parent="FlavorContainer" unique_id=356551063]
-layout_mode = 2
-size_flags_vertical = 8
-texture_normal = ExtResource("9_jbj1t")
-
-[node name="ToppingContainer" type="HBoxContainer" parent="." unique_id=1900078436]
-layout_mode = 0
-offset_left = 170.0
-offset_top = 452.0
-offset_right = 317.07693
-offset_bottom = 468.15384
-scale = Vector2(6.5, 6.5)
-theme_override_constants/separation = 1
-
-[node name="DulceButton" type="TextureButton" parent="ToppingContainer" unique_id=1742977142]
-layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("14_og1vs")
-
-[node name="StrawberryButton" type="TextureButton" parent="ToppingContainer" unique_id=909244039]
-layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("15_2wyq8")
-
-[node name="LemonButton" type="TextureButton" parent="ToppingContainer" unique_id=141280246]
-layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("16_vxglm")
-
-[node name="Pad" type="TextureRect" parent="ToppingContainer" unique_id=2127263382]
-layout_mode = 2
-size_flags_vertical = 8
-texture = ExtResource("17_2f3dj")
-stretch_mode = 2
-
-[node name="WineButton" type="TextureButton" parent="ToppingContainer" unique_id=594089387]
-layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("18_yq6so")
-
-[node name="BubblegumButton" type="TextureButton" parent="ToppingContainer" unique_id=1008883854]
-layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("19_fv21b")
-
-[node name="OrangeButton" type="TextureButton" parent="ToppingContainer" unique_id=623479388]
-layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("20_tel4y")
-
-[connection signal="pressed" from="ConeContainer/NormalConeButton" to="." method="_on_normal_cone_button_pressed"]
-[connection signal="pressed" from="ConeContainer/ChocolateConeButton" to="." method="_on_chocolate_cone_button_pressed"]
-[connection signal="pressed" from="ConeContainer/MilkConeButton" to="." method="_on_milk_cone_button_pressed"]
-[connection signal="pressed" from="ConeContainer/StrawberryConeButton" to="." method="_on_strawberry_cone_button_pressed"]
-[connection signal="pressed" from="FlavorContainer/DulceButton" to="." method="_on_dulce_button_pressed"]
-[connection signal="pressed" from="FlavorContainer/StrawberryButton" to="." method="_on_strawberry_button_pressed"]
-[connection signal="pressed" from="FlavorContainer/LemonButton" to="." method="_on_lemon_button_pressed"]
-[connection signal="pressed" from="FlavorContainer/WineButton" to="." method="_on_wine_button_pressed"]
-[connection signal="pressed" from="FlavorContainer/BubblegumButton" to="." method="_on_bubblegum_button_pressed"]
-[connection signal="pressed" from="FlavorContainer/OrangeButton" to="." method="_on_orange_button_pressed"]

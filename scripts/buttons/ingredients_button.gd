@@ -22,7 +22,7 @@ func _on_button_down() -> void:
 	match button_type:
 		BUTTON_TYPE.FLAVOR:
 			var flavor_texture: Texture = IngredientsList.get_flavor_texture(flavor)
-			main_scene.add_icecream_ball(flavor_texture)
+			main_scene.add_icecream_ball(flavor_texture, flavor)
 		BUTTON_TYPE.CONE:
 			var cone_texture: Texture = IngredientsList.get_cone_texture(cone)
 			main_scene.change_cone(cone_texture, cone)

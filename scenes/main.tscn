@@ -190,3 +190,10 @@ offset_right = -71.0
 offset_bottom = -1.2397766e-05
 grow_horizontal = 2
 scale = Vector2(2.395, 2.395)
+
+[node name="UndoButton" type="TextureButton" parent="." unique_id=964223460]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="button_down" from="UndoButton" to="." method="_on_undo_button_button_down"]

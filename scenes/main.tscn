@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://8bvu64v0otro"]
+
+[ext_resource type="Script" uid="uid://g2ry3vexxhkv" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://mbhw6tvve5yr" path="res://assets/counter/counter_clean2.png" id="2_gqmmt"]
+[ext_resource type="Texture2D" uid="uid://bcn7d02kced4a" path="res://assets/cones/cone_normal.png" id="3_choun"]
+[ext_resource type="Texture2D" uid="uid://cct8ntrj5ma0u" path="res://assets/counter/flavors/DoceDeLeite_.png" id="4_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://dnpk1xxfb38su" path="res://assets/counter/mini cones/mini_normal_cone.png" id="4_yc10j"]
+[ext_resource type="Texture2D" uid="uid://bv3lxyjro1av" path="res://assets/counter/flavors/Strawberry_.png" id="5_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://cf03ahwk7stqa" path="res://assets/counter/mini cones/mini_chocolate_cone.png" id="5_jscy8"]
+[ext_resource type="Texture2D" uid="uid://btmidaikxm3uy" path="res://assets/counter/mini cones/mini_milk_cone.png" id="6_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://efmvyy0rpcm" path="res://assets/counter/flavors/Lemon_.png" id="6_trceg"]
+[ext_resource type="Texture2D" uid="uid://bkmghmxwritme" path="res://assets/counter/flavors/Wine_.png" id="7_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://cd3kceme456bb" path="res://assets/counter/mini cones/mini_strawberry_cone.png" id="7_y6deb"]
+[ext_resource type="Texture2D" uid="uid://1ahytenh5cv3" path="res://assets/counter/flavors/Bubblegum_.png" id="8_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://ck1oq4blyq4k5" path="res://assets/counter/flavors/Orange_.png" id="9_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://ueq7jqjh3fs1" path="res://assets/counter/toppings/topping_1.png" id="14_og1vs"]
+[ext_resource type="Texture2D" uid="uid://b5r4ho4wwieka" path="res://assets/counter/toppings/topping_2.png" id="15_2wyq8"]
+[ext_resource type="Texture2D" uid="uid://canuqxf4fe7i4" path="res://assets/counter/toppings/topping_3.png" id="16_vxglm"]
+[ext_resource type="Texture2D" uid="uid://bhg74vf8g4n4n" path="res://assets/counter/pad.png" id="17_2f3dj"]
+[ext_resource type="Texture2D" uid="uid://bvgay0aobjd3g" path="res://assets/counter/toppings/topping_4.png" id="18_yq6so"]
+[ext_resource type="Texture2D" uid="uid://b6xr4e0skux5q" path="res://assets/counter/toppings/topping_5.png" id="19_fv21b"]
+[ext_resource type="Texture2D" uid="uid://dtu1a18h6tksp" path="res://assets/counter/toppings/topping_6.png" id="20_tel4y"]
+
+[node name="Main" type="Control" unique_id=260672558]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_o5qli")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2063055439]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="OrderLabel" type="Label" parent="." unique_id=2055039486]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 290.0
+offset_right = 890.0
+offset_bottom = 350.0
+
+[node name="CustomerSprite" type="TextureRect" parent="." unique_id=1039220589]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 30.0
+offset_right = 790.0
+offset_bottom = 330.0
+
+[node name="Counter" type="TextureRect" parent="." unique_id=1793407539]
+layout_mode = 0
+offset_left = 129.00002
+offset_top = 322.00003
+offset_right = 289.0
+offset_bottom = 378.00003
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("2_gqmmt")
+
+[node name="IceCreamDisplay" type="Control" parent="." unique_id=482876285]
+anchors_preset = 0
+offset_left = 540.0
+offset_top = 300.0
+offset_right = 740.0
+offset_bottom = 520.0
+
+[node name="ConeSprite" type="TextureRect" parent="IceCreamDisplay" unique_id=703842984]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14500001
+anchor_top = 0.39100003
+anchor_right = 0.91
+anchor_bottom = 1.077
+offset_top = -4.0200043
+offset_bottom = -3.9400024
+texture = ExtResource("3_choun")
+
+[node name="ScoopsContainer" type="Control" parent="IceCreamDisplay" unique_id=1296825994]
+z_index = 10
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0
+offset_top = -1.2397766e-05
+offset_right = -71.0
+offset_bottom = -1.2397766e-05
+grow_horizontal = 2
+scale = Vector2(2.395, 2.395)
+
+[node name="ConeContainer" type="HBoxContainer" parent="." unique_id=611874647]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 601.0
+offset_right = 864.0
+offset_bottom = 613.0
+scale = Vector2(5, 5)
+theme_override_constants/separation = 2
+
+[node name="NormalConeButton" type="TextureButton" parent="ConeContainer" unique_id=219514303]
+layout_mode = 2
+texture_normal = ExtResource("4_yc10j")
+
+[node name="ChocolateConeButton" type="TextureButton" parent="ConeContainer" unique_id=1413316686]
+layout_mode = 2
+texture_normal = ExtResource("5_jscy8")
+
+[node name="MilkConeButton" type="TextureButton" parent="ConeContainer" unique_id=1815580827]
+layout_mode = 2
+texture_normal = ExtResource("6_pm3ni")
+
+[node name="StrawberryConeButton" type="TextureButton" parent="ConeContainer" unique_id=775191848]
+layout_mode = 2
+texture_normal = ExtResource("7_y6deb")
+
+[node name="FlavorContainer" type="HBoxContainer" parent="." unique_id=1299193656]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 341.0
+offset_right = 329.3846
+offset_bottom = 359.0
+scale = Vector2(6.5, 6.5)
+theme_override_constants/separation = 0
+
+[node name="DulceButton" type="TextureButton" parent="FlavorContainer" unique_id=2089241393]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("4_ya4ey")
+
+[node name="StrawberryButton" type="TextureButton" parent="FlavorContainer" unique_id=413749217]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("5_eb6dy")
+
+[node name="LemonButton" type="TextureButton" parent="FlavorContainer" unique_id=1169282337]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("6_trceg")
+
+[node name="WineButton" type="TextureButton" parent="FlavorContainer" unique_id=1203950285]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("7_a8y0u")
+
+[node name="BubblegumButton" type="TextureButton" parent="FlavorContainer" unique_id=595539549]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("8_jkv2x")
+
+[node name="OrangeButton" type="TextureButton" parent="FlavorContainer" unique_id=356551063]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("9_jbj1t")
+
+[node name="ToppingContainer" type="HBoxContainer" parent="." unique_id=1900078436]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 452.0
+offset_right = 317.07693
+offset_bottom = 468.15384
+scale = Vector2(6.5, 6.5)
+theme_override_constants/separation = 1
+
+[node name="DulceButton" type="TextureButton" parent="ToppingContainer" unique_id=1742977142]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("14_og1vs")
+
+[node name="StrawberryButton" type="TextureButton" parent="ToppingContainer" unique_id=909244039]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("15_2wyq8")
+
+[node name="LemonButton" type="TextureButton" parent="ToppingContainer" unique_id=141280246]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("16_vxglm")
+
+[node name="Pad" type="TextureRect" parent="ToppingContainer" unique_id=2127263382]
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("17_2f3dj")
+stretch_mode = 2
+
+[node name="WineButton" type="TextureButton" parent="ToppingContainer" unique_id=594089387]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("18_yq6so")
+
+[node name="BubblegumButton" type="TextureButton" parent="ToppingContainer" unique_id=1008883854]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("19_fv21b")
+
+[node name="OrangeButton" type="TextureButton" parent="ToppingContainer" unique_id=623479388]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("20_tel4y")
+
+[connection signal="pressed" from="ConeContainer/NormalConeButton" to="." method="_on_normal_cone_button_pressed"]
+[connection signal="pressed" from="ConeContainer/ChocolateConeButton" to="." method="_on_chocolate_cone_button_pressed"]
+[connection signal="pressed" from="ConeContainer/MilkConeButton" to="." method="_on_milk_cone_button_pressed"]
+[connection signal="pressed" from="ConeContainer/StrawberryConeButton" to="." method="_on_strawberry_cone_button_pressed"]
+[connection signal="pressed" from="FlavorContainer/DulceButton" to="." method="_on_dulce_button_pressed"]
+[connection signal="pressed" from="FlavorContainer/StrawberryButton" to="." method="_on_strawberry_button_pressed"]
+[connection signal="pressed" from="FlavorContainer/LemonButton" to="." method="_on_lemon_button_pressed"]
+[connection signal="pressed" from="FlavorContainer/WineButton" to="." method="_on_wine_button_pressed"]
+[connection signal="pressed" from="FlavorContainer/BubblegumButton" to="." method="_on_bubblegum_button_pressed"]
+[connection signal="pressed" from="FlavorContainer/OrangeButton" to="." method="_on_orange_button_pressed"]

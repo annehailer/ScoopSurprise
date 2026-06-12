@@ -4,13 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://mbhw6tvve5yr" path="res://assets/counter/counter_clean2.png" id="2_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://bcn7d02kced4a" path="res://assets/cones/cone_normal.png" id="3_choun"]
 [ext_resource type="PackedScene" uid="uid://cli0km8r1okb2" path="res://entities/ingredients_button.tscn" id="8_gqmmt"]
-[ext_resource type="Texture2D" uid="uid://ueq7jqjh3fs1" path="res://assets/counter/toppings/topping_1.png" id="14_og1vs"]
-[ext_resource type="Texture2D" uid="uid://b5r4ho4wwieka" path="res://assets/counter/toppings/topping_2.png" id="15_2wyq8"]
-[ext_resource type="Texture2D" uid="uid://canuqxf4fe7i4" path="res://assets/counter/toppings/topping_3.png" id="16_vxglm"]
+[ext_resource type="Texture2D" uid="uid://c0n6lvsns78wy" path="res://assets/undo sign.png" id="12_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://bhg74vf8g4n4n" path="res://assets/counter/pad.png" id="17_2f3dj"]
-[ext_resource type="Texture2D" uid="uid://bvgay0aobjd3g" path="res://assets/counter/toppings/topping_4.png" id="18_yq6so"]
-[ext_resource type="Texture2D" uid="uid://b6xr4e0skux5q" path="res://assets/counter/toppings/topping_5.png" id="19_fv21b"]
-[ext_resource type="Texture2D" uid="uid://dtu1a18h6tksp" path="res://assets/counter/toppings/topping_6.png" id="20_tel4y"]
 
 [node name="Main" type="Control" unique_id=260672558]
 layout_mode = 3
@@ -60,23 +55,27 @@ layout_mode = 2
 button_type = 1
 flavor = 6
 cone = 2
+topping = 7
 
 [node name="ingredients_button2" parent="Ingredients/ConeContainer" unique_id=1523210699 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
 button_type = 1
 flavor = 6
+topping = 7
 
 [node name="ingredients_button3" parent="Ingredients/ConeContainer" unique_id=172986521 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
 button_type = 1
 flavor = 6
 cone = 1
+topping = 7
 
 [node name="ingredients_button4" parent="Ingredients/ConeContainer" unique_id=526623066 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
 button_type = 1
 flavor = 6
 cone = 3
+topping = 7
 
 [node name="FlavorContainer" type="HBoxContainer" parent="Ingredients" unique_id=1299193656]
 offset_left = 207.00002
@@ -90,30 +89,36 @@ theme_override_constants/separation = -1
 layout_mode = 2
 flavor = 1
 cone = 4
+topping = 7
 
 [node name="ingredients_button2" parent="Ingredients/FlavorContainer" unique_id=55735463 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
 flavor = 4
 cone = 4
+topping = 7
 
 [node name="ingredients_button4" parent="Ingredients/FlavorContainer" unique_id=1038116335 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
 flavor = 2
 cone = 4
+topping = 7
 
 [node name="ingredients_button3" parent="Ingredients/FlavorContainer" unique_id=1904633879 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
 flavor = 5
 cone = 4
+topping = 7
 
 [node name="ingredients_button5" parent="Ingredients/FlavorContainer" unique_id=915055730 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
 cone = 4
+topping = 7
 
 [node name="ingredients_button6" parent="Ingredients/FlavorContainer" unique_id=1391078560 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
 flavor = 3
 cone = 4
+topping = 7
 
 [node name="ToppingContainer" type="HBoxContainer" parent="Ingredients" unique_id=1900078436]
 offset_left = 170.0
@@ -123,20 +128,25 @@ offset_bottom = 468.15384
 scale = Vector2(6.5, 6.5)
 theme_override_constants/separation = 1
 
-[node name="DulceButton" type="TextureButton" parent="Ingredients/ToppingContainer" unique_id=1742977142]
+[node name="ingredients_button" parent="Ingredients/ToppingContainer" unique_id=1788158105 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("14_og1vs")
+button_type = 2
+flavor = 6
+cone = 4
 
-[node name="StrawberryButton" type="TextureButton" parent="Ingredients/ToppingContainer" unique_id=909244039]
+[node name="ingredients_button2" parent="Ingredients/ToppingContainer" unique_id=985777373 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("15_2wyq8")
+button_type = 2
+flavor = 6
+cone = 4
+topping = 1
 
-[node name="LemonButton" type="TextureButton" parent="Ingredients/ToppingContainer" unique_id=141280246]
+[node name="ingredients_button3" parent="Ingredients/ToppingContainer" unique_id=19463107 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("16_vxglm")
+button_type = 2
+flavor = 6
+cone = 4
+topping = 2
 
 [node name="Pad" type="TextureRect" parent="Ingredients/ToppingContainer" unique_id=2127263382]
 layout_mode = 2
@@ -144,20 +154,41 @@ size_flags_vertical = 8
 texture = ExtResource("17_2f3dj")
 stretch_mode = 2
 
-[node name="WineButton" type="TextureButton" parent="Ingredients/ToppingContainer" unique_id=594089387]
+[node name="ingredients_button4" parent="Ingredients/ToppingContainer" unique_id=1767307270 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("18_yq6so")
+button_type = 2
+flavor = 6
+cone = 4
+topping = 3
 
-[node name="BubblegumButton" type="TextureButton" parent="Ingredients/ToppingContainer" unique_id=1008883854]
+[node name="ingredients_button5" parent="Ingredients/ToppingContainer" unique_id=1228704709 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("19_fv21b")
+button_type = 2
+flavor = 6
+cone = 4
+topping = 4
 
-[node name="OrangeButton" type="TextureButton" parent="Ingredients/ToppingContainer" unique_id=623479388]
+[node name="ingredients_button6" parent="Ingredients/ToppingContainer" unique_id=357829370 instance=ExtResource("8_gqmmt")]
 layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("20_tel4y")
+button_type = 2
+flavor = 6
+cone = 4
+topping = 5
+
+[node name="Coberturas" type="HBoxContainer" parent="Ingredients" unique_id=1490051104]
+offset_left = 174.00002
+offset_top = 565.0
+offset_right = 321.07697
+offset_bottom = 583.0
+scale = Vector2(6.5, 6.5)
+theme_override_constants/separation = 1
+
+[node name="ingredients_button" parent="Ingredients/Coberturas" unique_id=1832858834 instance=ExtResource("8_gqmmt")]
+layout_mode = 2
+button_type = 2
+flavor = 6
+cone = 4
+topping = 6
 
 [node name="IceCreamDisplay" type="Control" parent="." unique_id=482876285]
 anchors_preset = 0
@@ -176,6 +207,7 @@ anchor_right = 0.91
 anchor_bottom = 1.077
 offset_top = -4.0200043
 offset_bottom = -3.9400024
+mouse_filter = 2
 texture = ExtResource("3_choun")
 
 [node name="ScoopsContainer" type="Control" parent="IceCreamDisplay" unique_id=1296825994]
@@ -190,10 +222,21 @@ offset_right = -71.0
 offset_bottom = -1.2397766e-05
 grow_horizontal = 2
 scale = Vector2(2.395, 2.395)
+mouse_filter = 2
 
-[node name="UndoButton" type="TextureButton" parent="." unique_id=964223460]
+[node name="ToppingSprite" type="TextureRect" parent="IceCreamDisplay" unique_id=479892298]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="UndoButton" type="TextureButton" parent="." unique_id=964223460]
+layout_mode = 0
+offset_left = 1137.0
+offset_top = 20.0
+offset_right = 1177.0
+offset_bottom = 60.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("12_eb6dy")
 
 [connection signal="button_down" from="UndoButton" to="." method="_on_undo_button_button_down"]

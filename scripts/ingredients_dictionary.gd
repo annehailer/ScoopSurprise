@@ -85,3 +85,54 @@ func get_counterCone_texture(cone: CONES):
 			return CONE_NORMAL.texture
 		CONES.STRAWBERRY:
 			return CONE_STRAWBERRY.texture
+
+# ---------------- toppings  -----------------------------------------
+
+enum TOPPINGS {
+	STRAW_CHOCOLATE,
+	COOKIES,
+	STRAWBERRIES,
+	MARSHMALLOW,
+	DROPS_CHOCOLATE,
+	SPRINKLES,
+	LEITE_CONDENSADO,
+	NULL
+}
+
+const TOP_STRAW := {"texture": preload("uid://d0xtb580njhdu"), "counter_texture": preload("uid://dq6c5h8fn8bun")}
+const TOP_COOKIE := {"texture": preload("uid://dc7r3dsto44b3"), "counter_texture": preload("uid://bi5kkgse5ncby")}
+const TOP_STRAWBERRY := {"texture": preload("uid://bljokij0wep2p"), "counter_texture": preload("uid://bjixpqd8d4awe")}
+const TOP_MARSHMALLOW := {"texture": preload("uid://crddvs2nljpag"), "counter_texture": preload("uid://cyn61bycnp52e")}
+const TOP_DROPS := {"texture": preload("uid://dwrxn114rwyw3"), "counter_texture": preload("uid://brych28vrww51")}
+const TOP_SPRINKLES := {"texture": preload("uid://dpl0qqteevd18"), "counter_texture": preload("uid://c7mr0ylwdngjh")}
+const TOP_LEITECONDENSADO := {"texture": preload("uid://g0segccllc1a"), "counter_texture": preload("uid://bx8ytm17cvb7i")}
+
+func get_topping_texture(topping: TOPPINGS):
+	match topping:
+		TOPPINGS.STRAW_CHOCOLATE:
+			return TOP_STRAW.texture
+		TOPPINGS.COOKIES:
+			return TOP_COOKIE.texture
+		TOPPINGS.STRAWBERRIES:
+			return TOP_STRAWBERRY.texture
+		TOPPINGS.MARSHMALLOW:
+			return TOP_MARSHMALLOW.texture
+		TOPPINGS.DROPS_CHOCOLATE:
+			return TOP_DROPS.texture
+		TOPPINGS.LEITE_CONDENSADO:
+			return TOP_LEITECONDENSADO.texture
+
+func get_counterTopping_texture(topping: TOPPINGS):
+	match topping:
+		TOPPINGS.STRAW_CHOCOLATE:
+			return TOP_STRAW.counter_texture
+		TOPPINGS.COOKIES:
+			return TOP_COOKIE.counter_texture
+		TOPPINGS.STRAWBERRIES:
+			return TOP_STRAWBERRY.counter_texture
+		TOPPINGS.MARSHMALLOW:
+			return TOP_MARSHMALLOW.counter_texture
+		TOPPINGS.DROPS_CHOCOLATE:
+			return TOP_DROPS.counter_texture
+		TOPPINGS.LEITE_CONDENSADO:
+			return TOP_LEITECONDENSADO.counter_texture

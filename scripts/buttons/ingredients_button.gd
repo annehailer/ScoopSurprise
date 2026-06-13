@@ -31,9 +31,9 @@ func _ready() -> void:
 
 
 func _on_button_down() -> void:
-	print("click", name)
-	print("TIPO:", button_type)
-	print(main_scene)
+	#print("click", name)
+	#print("TIPO:", button_type)
+	#print(main_scene)
 	match button_type:
 		BUTTON_TYPE.FLAVOR:
 			var flavor_texture: Texture = IngredientsList.get_flavor_texture(flavor)

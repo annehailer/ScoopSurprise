@@ -4,16 +4,14 @@ class_name Main
 
 var selected_cone: IngredientsList.CONES = IngredientsList.CONES.NULL
 
-var current_icecream = {
-	"cone":IngredientsList.CONES.NULL,
-	"scoops": [],
-	"topping": null
-	}
+var current_icecream = IceCream
 
 var scoops_count = 0
 
 
 func _ready():
+	current_icecream = IceCream.new()
+	
 	cone_sprite.texture = null
 	topping_sprite.texture = null
 
@@ -27,7 +25,7 @@ func _process(delta: float) -> void:
 @onready var cone_sprite: TextureRect = $IceCreamDisplay/ConeSprite
 func change_cone(cone_texture: Texture, cone_type: IngredientsList.CONES):
 	selected_cone = cone_type
-	current_icecream["cone"] = cone_type
+	current_icecream.cone = cone_type
 	cone_sprite.texture = cone_texture
 
 var scoop_scene = preload("res://entities/scoop.tscn")
@@ -41,7 +39,7 @@ func add_icecream_ball(flavor_texture: Texture, flavor: IngredientsList.FLAVORS)
 	#print("tamo aqui: " + str(flavor_texture))
 	var scoop = scoop_scene.instantiate()
 	scoop.texture = flavor_texture
-	current_icecream["scoops"].append(flavor)
+	current_icecream.scoops.append(flavor)
 	var scoop_behaviour: Scoop = scoop as Scoop
 	scoop_behaviour.pump_scale()
 	
@@ -98,10 +96,7 @@ func clear_icecream():
 	
 	selected_cone = IngredientsList.CONES.NULL
 	
-	current_icecream = {
-		"cone": IngredientsList.CONES.NULL,
-		"scoops": []
-	}
+	current_icecream = IceCream.new()
 	
 	cone_sprite.texture = null
 	topping_sprite.texture = null
@@ -114,7 +109,7 @@ func _input(event: InputEvent):
 
 # ---------------------------------------- UNDO ----------------------------------------------------
 
-func _on_undo_button_button_down():
+func _on_undo_button_down():
 	undo_last_action()
 
 func undo_last_action():
@@ -138,7 +133,7 @@ func undo_last_action():
 		
 		scoops_count -= 1
 		
-		current_icecream["scoops"].pop_back()
+		current_icecream.scoops.pop_back()
 		update_toppings_pos()
 		return
 	
@@ -147,7 +142,30 @@ func undo_last_action():
 		
 		selected_cone = IngredientsList.CONES.NULL
 		
-		current_icecream["cone"] = IngredientsList.CONES.NULL
+		current_icecream.cone = IngredientsList.CONES.NULL
 		
 		cone_sprite.texture = null
 		
+
+# ------------------------------------- SERVE -------------------------------------------------
+
+@onready var order_manager: OrderManager = $OrderManager
+
+func _on_serve_button_down() -> void:
+	var success = order_manager.check_order(current_icecream)
+	
+	if success:
+		print("correto")
+		clear_icecream()
+		order_manager.generate_order()
+	else:
+		print("errado")
+	
+	
+	
+	
+	
+	
+	
+	
+	

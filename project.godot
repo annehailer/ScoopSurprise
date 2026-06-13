@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://dv17wb8yevwsh"
 IngredientsList="*uid://dj3sjhbiqx4kr"
+CustomerList="*uid://quwch04gryn3"
 
 [display]
 

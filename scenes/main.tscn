@@ -2,10 +2,16 @@
 
 [ext_resource type="Script" uid="uid://g2ry3vexxhkv" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://bc1sye4s0fw4f" path="res://assets/counter/toppingss counter.png" id="2_tefeu"]
+[ext_resource type="Texture2D" uid="uid://sk6lppvp78nu" path="res://assets/bg/bg.png" id="2_trceg"]
 [ext_resource type="Texture2D" uid="uid://bcn7d02kced4a" path="res://assets/cones/cone_normal.png" id="3_choun"]
+[ext_resource type="Texture2D" uid="uid://bj4bsaysk2c8u" path="res://assets/counter/counter2.png" id="4_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://cs5hpdnyob5lf" path="res://assets/counter/counter1and2.png" id="5_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://crddvs2nljpag" path="res://assets/toppings/marshmallow.png" id="5_o6xl0"]
 [ext_resource type="Script" uid="uid://kne2odlf1nkt" path="res://scripts/order_manager.gd" id="7_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://bh3w3e3vq7nfw" path="res://assets/flavors/flavor_lime.png" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://cli0km8r1okb2" path="res://entities/ingredients_button.tscn" id="8_gqmmt"]
+[ext_resource type="Texture2D" uid="uid://b7loyrfr4hwq0" path="res://assets/flavors/flavor_strawberry.png" id="9_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://b38hwnampquue" path="res://assets/flavors/flavor_bubblegum.png" id="10_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://c0n6lvsns78wy" path="res://assets/undo sign.png" id="12_eb6dy"]
 
 [node name="Main" type="Control" unique_id=260672558]
@@ -35,39 +41,47 @@ color = Color(1, 0.050980393, 1, 1)
 
 [node name="Background" type="TextureRect" parent="." unique_id=2063055439]
 layout_mode = 0
+offset_top = -31.0
 offset_right = 1280.0
-offset_bottom = 720.0
-
-[node name="OrderLabel" type="Label" parent="." unique_id=2055039486]
-layout_mode = 0
-offset_left = 390.0
-offset_top = 290.0
-offset_right = 890.0
-offset_bottom = 350.0
-
-[node name="CustomerSprite" type="TextureRect" parent="." unique_id=1039220589]
-layout_mode = 0
-offset_left = 490.0
-offset_top = 30.0
-offset_right = 790.0
-offset_bottom = 330.0
+offset_bottom = 689.0
+texture = ExtResource("2_trceg")
 
 [node name="Counter" type="TextureRect" parent="." unique_id=1793407539]
+visible = false
 layout_mode = 0
-offset_left = 129.00002
-offset_top = 322.00003
-offset_right = 289.0
-offset_bottom = 378.00003
+offset_left = 339.0
+offset_top = 340.00003
+offset_right = 499.0
+offset_bottom = 396.00003
 scale = Vector2(6.5, 6.5)
 texture = ExtResource("2_tefeu")
 
+[node name="Counter2" type="TextureRect" parent="." unique_id=1090804998]
+visible = false
+layout_mode = 0
+offset_left = -148.0
+offset_top = 340.0
+offset_right = -69.0
+offset_bottom = 395.0
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("4_a8y0u")
+
+[node name="FullCounter" type="TextureRect" parent="." unique_id=1420090751]
+layout_mode = 0
+offset_top = 425.0
+offset_right = 240.0
+offset_bottom = 481.0
+scale = Vector2(5.333, 5.333)
+texture = ExtResource("5_jkv2x")
+
 [node name="Ingredients" type="Node2D" parent="." unique_id=750706785]
+position = Vector2(108, 0)
 
 [node name="ConeContainer" type="HBoxContainer" parent="Ingredients" unique_id=611874647]
-offset_left = 800.0
-offset_top = 585.88
-offset_right = 898.0
-offset_bottom = 603.88
+offset_left = 794.99994
+offset_top = 639.99994
+offset_right = 926.99994
+offset_bottom = 673.99994
 scale = Vector2(2.36, 2.36)
 theme_override_constants/separation = 4
 
@@ -103,10 +117,10 @@ cone = 3
 topping = 7
 
 [node name="FlavorContainer" type="HBoxContainer" parent="Ingredients" unique_id=1299193656]
-offset_left = 207.00002
-offset_top = 342.0
-offset_right = 345.0
-offset_bottom = 360.0
+offset_left = 326.0
+offset_top = 436.0
+offset_right = 464.0
+offset_bottom = 454.0
 scale = Vector2(6.5, 6.5)
 theme_override_constants/separation = 1
 
@@ -158,10 +172,10 @@ cone = 4
 topping = 7
 
 [node name="ToppingContainer" type="HBoxContainer" parent="Ingredients" unique_id=1900078436]
-offset_left = 176.0
-offset_top = 452.00003
-offset_right = 323.07693
-offset_bottom = 468.15387
+offset_left = 326.00003
+offset_top = 519.0
+offset_right = 473.07697
+offset_bottom = 535.1538
 scale = Vector2(6.5, 6.5)
 theme_override_constants/separation = 3
 
@@ -189,10 +203,10 @@ cone = 4
 topping = 2
 
 [node name="ToppingContainer2" type="HBoxContainer" parent="Ingredients" unique_id=202506773]
-offset_left = 742.00006
-offset_top = 452.0
-offset_right = 889.07697
-offset_bottom = 468.15384
+offset_left = 789.0
+offset_top = 520.0
+offset_right = 936.0769
+offset_bottom = 536.1538
 scale = Vector2(6.5, 6.5)
 theme_override_constants/separation = 3
 
@@ -221,11 +235,10 @@ cone = 4
 topping = 5
 
 [node name="Coberturas" type="HBoxContainer" parent="Ingredients" unique_id=1490051104]
-visible = false
-offset_left = 174.00002
-offset_top = 565.0
-offset_right = 321.07697
-offset_bottom = 583.0
+offset_left = 347.0
+offset_top = 573.0
+offset_right = 494.07697
+offset_bottom = 591.0
 scale = Vector2(6.5, 6.5)
 theme_override_constants/separation = 1
 
@@ -238,10 +251,10 @@ topping = 6
 
 [node name="IceCreamDisplay" type="Control" parent="." unique_id=482876285]
 anchors_preset = 0
-offset_left = 540.0
-offset_top = 300.0
-offset_right = 740.0
-offset_bottom = 520.0
+offset_left = 750.0
+offset_top = 318.0
+offset_right = 950.0
+offset_bottom = 538.0
 mouse_filter = 2
 
 [node name="ConeSprite" type="TextureRect" parent="IceCreamDisplay" unique_id=703842984]
@@ -252,10 +265,10 @@ anchor_left = 0.14500001
 anchor_top = 0.39100003
 anchor_right = 0.91
 anchor_bottom = 1.077
-offset_left = -2.0
-offset_top = -4.0200043
-offset_right = -2.0
-offset_bottom = -3.9400024
+offset_left = -31.0
+offset_top = 33.979996
+offset_right = -31.0
+offset_bottom = 34.059998
 mouse_filter = 2
 texture = ExtResource("3_choun")
 
@@ -291,10 +304,81 @@ offset_bottom = 60.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("12_eb6dy")
 
+[node name="ServeButton" type="Button" parent="." unique_id=1051254615]
+visible = false
+layout_mode = 0
+offset_left = 1147.0
+offset_top = 271.00003
+offset_right = 1155.0
+offset_bottom = 279.00003
+scale = Vector2(10, 10)
+
+[node name="CustomerSprite" type="TextureRect" parent="." unique_id=1039220589]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 123.0
+offset_right = 581.0
+offset_bottom = 423.0
+
 [node name="OrderManager" type="Node2D" parent="." unique_id=1000604997]
 script = ExtResource("7_o6xl0")
 
-[connection signal="button_down" from="UndoButton" to="." method="_on_undo_button_button_down"]
+[node name="OrderLabel" type="Label" parent="." unique_id=2055039486]
+visible = false
+layout_mode = 0
+offset_left = 390.0
+offset_top = 290.0
+offset_right = 890.0
+offset_bottom = 350.0
+
+[node name="OrderDisplay" type="Control" parent="." unique_id=542295302]
+visible = false
+anchors_preset = 0
+offset_left = 809.00006
+offset_top = 44.0
+offset_right = 977.00006
+offset_bottom = 216.0
+scale = Vector2(1.5, 1.5)
+
+[node name="OrderCone" type="TextureRect" parent="OrderDisplay" unique_id=1167518236]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 69.0
+offset_right = 71.0
+offset_bottom = 109.0
+texture = ExtResource("3_choun")
+
+[node name="OrderScoop1" type="TextureRect" parent="OrderDisplay" unique_id=1766958440]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 45.0
+offset_right = 71.0
+offset_bottom = 85.0
+texture = ExtResource("8_choun")
+
+[node name="OrderScoop2" type="TextureRect" parent="OrderDisplay" unique_id=531004655]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 29.0
+offset_right = 71.0
+offset_bottom = 69.0
+texture = ExtResource("9_ya4ey")
+
+[node name="OrderScoop3" type="TextureRect" parent="OrderDisplay" unique_id=1661332341]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 14.0
+offset_right = 71.0
+offset_bottom = 54.0
+texture = ExtResource("10_eb6dy")
+
+[node name="OrderTopping" type="TextureRect" parent="OrderDisplay" unique_id=652532241]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="button_down" from="UndoButton" to="." method="_on_undo_button_down"]
+[connection signal="button_down" from="ServeButton" to="." method="_on_serve_button_down"]
 
 [editable path="Ingredients/ToppingContainer/ingredients_button"]
 [editable path="Ingredients/ToppingContainer/ingredients_button2"]

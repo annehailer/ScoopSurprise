@@ -51,35 +51,44 @@ func add_icecream_ball(flavor_texture: Texture, flavor: IngredientsList.FLAVORS)
 	
 	match scoops_count:
 		0:
-			scoop.position = Vector2(0,-7)
+			scoop.global_position = Vector2(0,-7)
 		1:
-			scoop.position = Vector2(0,-39)
+			scoop.global_position = Vector2(0,-39)
 		2:
-			scoop.position = Vector2(0,-71)
+			scoop.global_position = Vector2(0,-71)
 	
 	scoops_container.add_child(scoop)
 	
 	scoops_count += 1
+	
+	update_toppings_pos()
 
 
 @onready var topping_sprite: TextureRect = $IceCreamDisplay/ToppingSprite
 
 func add_topping(topping_texture: Texture, topping: IngredientsList.TOPPINGS):
-	if selected_cone == IngredientsList.CONES.NULL:
-		return
-	if scoops_count <= 0:
+	#if selected_cone == IngredientsList.CONES.NULL:
+		#return
+	#if scoops_count <= 0:
+		#return
+	if scoops_container.get_child_count() == 0:
 		return
 	topping_sprite.texture = topping_texture
 	
 	update_toppings_pos()
 
+
 func update_toppings_pos():
-	if scoops_container.get_child_count() == 0:
-		return
+	var last_scoop: Scoop = scoops_container.get_child(scoops_count - 1)
+	topping_sprite.global_position = last_scoop.global_position + Vector2(0,6)
 	
-	var last_scoop = scoops_container.get_child(scoops_container.get_child_count() - 1)
-	
-	topping_sprite.position = last_scoop.position + Vector2(0, -10)
+	#match scoops_count:
+		#1:
+			#topping_sprite.global_position = last_scoop.global_position + Vector2(0,6)
+		#2:
+			#topping_sprite.global_position = last_scoop.global_position + Vector2(0,6)
+		#3:
+			#topping_sprite.global_position = last_scoop.global_position + Vector2(0,6)
 
 
 # ---------------------------------------- CLEAR ---------------------------------------------------
@@ -116,6 +125,7 @@ func undo_last_action():
 		return
 	undo_timer = undo_cooldown
 	
+	
 	# remove a ultima bola
 	if scoops_count > 0:
 		var last_scoop: Scoop = scoops_container.get_child(
@@ -127,6 +137,7 @@ func undo_last_action():
 		scoops_count -= 1
 		
 		current_icecream["scoops"].pop_back()
+		update_toppings_pos()
 		return
 	
 	# se nao tiver bolas, tira a casquinha
@@ -137,3 +148,4 @@ func undo_last_action():
 		current_icecream["cone"] = IngredientsList.CONES.NULL
 		
 		cone_sprite.texture = null
+		

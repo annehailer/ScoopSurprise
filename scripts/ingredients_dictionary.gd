@@ -119,6 +119,8 @@ func get_topping_texture(topping: TOPPINGS):
 			return TOP_MARSHMALLOW.texture
 		TOPPINGS.DROPS_CHOCOLATE:
 			return TOP_DROPS.texture
+		TOPPINGS.SPRINKLES:
+			return TOP_SPRINKLES.texture
 		TOPPINGS.LEITE_CONDENSADO:
 			return TOP_LEITECONDENSADO.texture
 
@@ -134,5 +136,7 @@ func get_counterTopping_texture(topping: TOPPINGS):
 			return TOP_MARSHMALLOW.counter_texture
 		TOPPINGS.DROPS_CHOCOLATE:
 			return TOP_DROPS.counter_texture
+		TOPPINGS.SPRINKLES:
+			return TOP_SPRINKLES.counter_texture
 		TOPPINGS.LEITE_CONDENSADO:
 			return TOP_LEITECONDENSADO.counter_texture

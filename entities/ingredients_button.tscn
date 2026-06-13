@@ -1,11 +1,21 @@
 [gd_scene format=3 uid="uid://cli0km8r1okb2"]
 
-[ext_resource type="Texture2D" uid="uid://cct8ntrj5ma0u" path="res://assets/counter/flavors/DoceDeLeite_.png" id="1_qf57y"]
+[ext_resource type="Texture2D" uid="uid://dq6c5h8fn8bun" path="res://assets/toppings/counter/mini straws.png" id="2_qf57y"]
 [ext_resource type="Script" uid="uid://cmc6mch0jatr7" path="res://scripts/buttons/ingredients_button.gd" id="2_vespp"]
 
-[node name="ingredients_button" type="TextureButton" unique_id=138557786]
+[node name="ingredients_button" type="Button" unique_id=416895979]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 330.0
+offset_bottom = 62.0
 size_flags_vertical = 8
-texture_normal = ExtResource("1_qf57y")
 script = ExtResource("2_vespp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=875296712]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 23.0
+offset_bottom = 23.0
+scale = Vector2(0.633, 0.504)
+texture = ExtResource("2_qf57y")
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]

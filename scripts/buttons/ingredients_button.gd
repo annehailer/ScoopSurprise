@@ -1,24 +1,33 @@
-extends TextureButton
+extends Button
 
 @onready var main_scene: Main = get_parent().get_parent().get_parent()
 @export var button_type: BUTTON_TYPE
 @export var flavor: IngredientsList.FLAVORS 
 @export var cone: IngredientsList.CONES 
 @export var topping: IngredientsList.TOPPINGS
+@onready var texture_rect: TextureRect = %TextureRect
+
+var flavor_texture_scale: Vector2 = Vector2(0.9, 0.75)
+var cone_texture_scale: Vector2 = Vector2(1, 1)
+var topping_texture_scale: Vector2 = Vector2(0.63, 0.50)
 
 
 func _ready() -> void:
 	match button_type:
 		BUTTON_TYPE.FLAVOR:
 			var counterFlavor_texture: Texture = IngredientsList.get_counterFlavor_texture(flavor)
-			texture_normal = counterFlavor_texture
+			texture_rect.scale = flavor_texture_scale
+			texture_rect.texture = counterFlavor_texture
 		BUTTON_TYPE.CONE:
-			#self.set_size(Vector2(10, 10))
 			var counterCONE_texture: Texture = IngredientsList.get_counterCone_texture(cone)
-			texture_normal = counterCONE_texture
+			texture_rect.scale = cone_texture_scale
+			texture_rect.texture = counterCONE_texture
 		BUTTON_TYPE.TOPPING:
 			var counterTopping_texture: Texture = IngredientsList.get_counterTopping_texture(topping)
-			texture_normal = counterTopping_texture
+			texture_rect.scale = topping_texture_scale
+			texture_rect.texture = counterTopping_texture
+		BUTTON_TYPE.NULL:
+			return
 
 
 func _on_button_down() -> void:
@@ -35,11 +44,14 @@ func _on_button_down() -> void:
 		BUTTON_TYPE.TOPPING:
 			var topping_texture: Texture = IngredientsList.get_topping_texture(topping)
 			main_scene.add_topping(topping_texture, topping)
+		BUTTON_TYPE.NULL:
+			return
 
 
 
 enum BUTTON_TYPE {
 	FLAVOR,
 	CONE,
-	TOPPING
+	TOPPING,
+	NULL
 }

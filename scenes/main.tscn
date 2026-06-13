@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bc1sye4s0fw4f" path="res://assets/counter/toppingss counter.png" id="2_tefeu"]
 [ext_resource type="Texture2D" uid="uid://bcn7d02kced4a" path="res://assets/cones/cone_normal.png" id="3_choun"]
 [ext_resource type="Texture2D" uid="uid://crddvs2nljpag" path="res://assets/toppings/marshmallow.png" id="5_o6xl0"]
+[ext_resource type="Script" uid="uid://kne2odlf1nkt" path="res://scripts/order_manager.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cli0km8r1okb2" path="res://entities/ingredients_button.tscn" id="8_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://c0n6lvsns78wy" path="res://assets/undo sign.png" id="12_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://bhg74vf8g4n4n" path="res://assets/counter/pad.png" id="17_2f3dj"]
 
 [node name="Main" type="Control" unique_id=260672558]
 layout_mode = 3
@@ -291,16 +291,8 @@ offset_bottom = 60.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("12_eb6dy")
 
-[node name="Pad" type="TextureRect" parent="." unique_id=2127263382]
-visible = false
-layout_mode = 0
-offset_left = 521.0
-offset_top = 465.0
-offset_right = 547.0
-offset_bottom = 479.0
-size_flags_vertical = 8
-texture = ExtResource("17_2f3dj")
-stretch_mode = 2
+[node name="OrderManager" type="Node2D" parent="." unique_id=1000604997]
+script = ExtResource("7_o6xl0")
 
 [connection signal="button_down" from="UndoButton" to="." method="_on_undo_button_button_down"]
 

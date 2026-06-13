@@ -13,9 +13,6 @@ var current_icecream = {
 var scoops_count = 0
 
 
-
-
-
 func _ready():
 	cone_sprite.texture = null
 	topping_sprite.texture = null
@@ -124,6 +121,11 @@ func undo_last_action():
 	if undo_timer > 0:
 		return
 	undo_timer = undo_cooldown
+	
+	# remove topping
+	if topping_sprite.texture != null:
+		topping_sprite.texture = null
+		return
 	
 	
 	# remove a ultima bola
